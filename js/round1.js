@@ -14,9 +14,7 @@ let timer = 0,
 function loadParagraph() {
     const ranIndex = Math.floor(Math.random() * paragraphs.length);
     typingText.innerHTML = "";
-    // paragraphs[ranIndex].split(" ").forEach(word => {
-        var paragraph = "hello there"
-    paragraph.split(" ").forEach(word => {
+    paragraphs[ranIndex].split(" ").forEach(word => {
         let div = ''
         word.split("").forEach(char => {
             div += `<span class="char">${char}</span>`;
@@ -62,9 +60,7 @@ function initTyping() {
         mistakeTag.innerText = wrongWords;
         accuracyTag.innerText = ((1 - (wrongWords / totalWords)) * 100).toFixed(0) + "%"
         if (charIndex >= characters.length - 1) {
-            // clearInterval(timer);
-            var clearTime = setTimeout( "JavaScript Statements", 100 );
-            clearTimeout( clearTime );
+            clearInterval(timer);
         }
     }
     else {
