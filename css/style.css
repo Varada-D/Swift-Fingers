@@ -47,6 +47,7 @@ body{
   text-align: justify;
   letter-spacing: 1px;
   word-break: break-all;
+  /* display: flex; */
 }
 .typing-text p span{
   position: relative;
@@ -77,7 +78,14 @@ body{
 }
 
 .word {
-  display: inline;
+  display: inline-block;
+  /* flex-direction: row; */
+  /* flex: 1; */
+}
+.char {
+  min-width: 50px;
+  /* flex-direction: row; */
+  /* flex: 1; */
 }
 
 @keyframes blink{
