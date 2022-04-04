@@ -1,6 +1,6 @@
 const typingText = document.querySelector(".typing-text p"),
     inpField = document.querySelector(".wrapper .input-field"),
-    tryAgainBtn = document.querySelector(".content button"),
+    // tryAgainBtn = document.querySelector(".content button"),
     timeTag = document.querySelector(".time span b"),
     mistakeTag = document.querySelector(".mistake span"),
     wpmTag = document.querySelector(".wpm span"),
@@ -9,12 +9,13 @@ const typingText = document.querySelector(".typing-text p"),
 let correctWords = 0, totalWords = 0
 
 let timer = 0,
-    charIndex = wrongWords = isTyping = 0;
+    charIndex = wrongWords = isTyping = 0, charLen = 0;
 
 function loadParagraph() {
     const ranIndex = Math.floor(Math.random() * paragraphs.length);
     typingText.innerHTML = "";
-    paragraphs[ranIndex].split(" ").forEach(word => {
+    // "Hello there. This is a typing test".split(" ").forEach(word => {
+        paragraphs[ranIndex].split(" ").forEach(word => {
         let div = ''
         word.split("").forEach(char => {
             div += `<span class="char">${char}</span>`;
@@ -29,10 +30,11 @@ function loadParagraph() {
 
 function initTyping() {
     let characters = typingText.querySelectorAll("span");
+    charLen = characters.length;
     let typedChar = inpField.value.split("")[charIndex];
     if (charIndex < characters.length - 1) {
         if (!isTyping) {
-            timer = setInterval(initTimer, 1000);
+            timer = setInterval(initTimer, 100);
             isTyping = true;
         }
         if (typedChar == null) {
@@ -54,26 +56,32 @@ function initTyping() {
         }
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
-        let wpm = Math.round(((charIndex - wrongWords) / 5) / (timer) * 60);
+        let wpm = Math.round(((charIndex) / 5) / (timer) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
         wpmTag.innerText = wpm;
         mistakeTag.innerText = wrongWords;
         accuracyTag.innerText = ((1 - (wrongWords / totalWords)) * 100).toFixed(0) + "%"
-        if (charIndex >= characters.length - 1) {
-            clearInterval(timer);
-        }
+        // console.log(charIndex)
+        console.log(characters.length)
+
     }
     else {
+        isTyping = false;
         clearInterval(timer);
         inpField.value = "";
     }
 }
 
 function initTimer() {
-    timeTag.innerText = timer;
-    timer++;
-    let wpm = Math.round(((charIndex - wrongWords) / 5) / (timer) * 60);
-    wpmTag.innerText = wpm;
+    timeTag.innerText = timer.toFixed(1);
+    if (charIndex >= charLen - 1) {
+        clearInterval(timer);
+    }
+    else {
+        timer+=0.1;
+        let wpm = Math.round(((charIndex) / 5) / (timer) * 60);
+        wpmTag.innerText = wpm;
+    }
 }
 
 function resetGame() {
@@ -89,4 +97,4 @@ function resetGame() {
 
 loadParagraph();
 inpField.addEventListener("input", initTyping);
-tryAgainBtn.addEventListener("click", resetGame);
+// tryAgainBtn.addEventListener("click", resetGame);

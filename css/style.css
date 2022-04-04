@@ -52,10 +52,12 @@ body{
 .typing-text p span{
   position: relative;
 }
-.typing-text p span.correct{
+.correct{
+  /* .typing-text p span.correct{ */
   color: #56964f;
 }
-.typing-text p span.incorrect{
+.incorrect{
+  /* .typing-text p span.incorrect{ */
   color: #cb3439;
   outline: 1px solid #fff;
   background: #ffc0cb;
