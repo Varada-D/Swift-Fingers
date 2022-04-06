@@ -1,12 +1,11 @@
 const typingText = document.querySelector(".typing-text p"),
     inpField = document.querySelector(".wrapper .input-field"),
-    tryAgainBtn = document.querySelector(".content button"),
     timeTag = document.querySelector(".time span b"),
     mistakeTag = document.querySelector(".mistake span"),
     wpmTag = document.querySelector(".wpm span"),
     accuracyTag = document.querySelector(".accuracy span");
 
-let correctWords = 0, totalWords = 0
+let totalWords = 0
 
 let timer,
     maxTime = 60,
@@ -84,18 +83,6 @@ function initTimer() {
     }
 }
 
-function resetGame() {
-    loadParagraph();
-    clearInterval(timer);
-    timeLeft = maxTime;
-    charIndex = wrongWords = isTyping = 0;
-    inpField.value = "";
-    timeTag.innerText = timeLeft;
-    wpmTag.innerText = 0;
-    mistakeTag.innerText = 0;
-    accuracyTag.innerText = 0;
-}
 
 loadParagraph();
 inpField.addEventListener("input", initTyping);
-tryAgainBtn.addEventListener("click", resetGame);
