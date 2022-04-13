@@ -42,7 +42,6 @@ function initTyping() {
         let characters = wordElement.getElementsByClassName("char");
         for (i = 0; i < characters.length; i++) {
             word += characters[i].innerText;
-            // totalWords++
         }
         if (wordIndex >= typingText.getElementsByClassName("word").length - 1) {
             clearInterval(timer);
@@ -53,6 +52,37 @@ function initTyping() {
         document.querySelector("li.mistake").style.display = "inline-block"
         document.querySelector("li.accuracy").style.display = "inline-block"
     }
+}
+
+function checkCalc() {
+    let inpFieldVal = inpField.value;
+    inpFieldVal.padEnd(word.length, "*")
+    let correct = true
+    for (i = 0; i < word.length; i++) {
+        if (inpFieldVal[i] != word[i]) {
+            correct = false
+            wrongWords++
+        }
+        totalWords++
+    }
+    if (correct) {
+        wordElement.classList.add("correct")
+    }
+    else {
+        wordElement.classList.add("incorrect")
+    }
+    inpField.dispatchEvent(new KeyboardEvent('keydown', { 'key': ' ' }))
+    inpField.value = ''
+    let wpm = Math.round(((totalWords - wrongWords) / 5) / (maxTime - timeLeft) * 60);
+    wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+    wpmTag.innerText = wpm;
+    mistakeTag.innerText = wrongWords;
+    accuracyTag.innerText = ((1 - (wrongWords / totalWords)) * 100).toFixed(0) + "%"
+    wordIndex++
+    for (i = 0; i < typingText.getElementsByClassName("word").length; i++) {
+        typingText.getElementsByClassName("word")[i].classList.remove("active")
+    }
+    typingText.getElementsByClassName("word")[wordIndex].classList.add("active")
 }
 
 function initTimer() {
@@ -73,38 +103,8 @@ function initTimer() {
 loadParagraph();
 inpField.addEventListener("keyup", function (e) {
     e = e.key
-    if(e!=null) {
-        initTyping()
-    }
+    initTyping()
     if (e == ' ') {
-        initTyping()
-        let inpFieldVal = inpField.value;
-        inpFieldVal.padEnd(word.length, "*")
-        let correct = true
-        for (i = 0; i < word.length; i++) {
-            if (inpFieldVal[i] != word[i]) {
-                correct = false
-                wrongWords++
-            }
-            totalWords++
-        }
-        if (correct) {
-            wordElement.classList.add("correct")
-        }
-        else {
-            wordElement.classList.add("incorrect")
-        }
-        inpField.dispatchEvent(new KeyboardEvent('keydown', {'key': ' '}))
-        inpField.value = ''
-        let wpm = Math.round(((totalWords - wrongWords) / 5) / (maxTime - timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        wpmTag.innerText = wpm;
-        mistakeTag.innerText = wrongWords;
-        accuracyTag.innerText = ((1 - (wrongWords / totalWords)) * 100).toFixed(0) + "%"
-        wordIndex++
-        for (i = 0; i < typingText.getElementsByClassName("word").length; i++) {
-            typingText.getElementsByClassName("word")[i].classList.remove("active")
-        }
-        typingText.getElementsByClassName("word")[wordIndex].classList.add("active")
+        checkCalc()
     }
 });
