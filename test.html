@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Fingers | Ananta</title>
+    <link rel="icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+    <link href="css/darkster.css" rel="stylesheet">
+    <link href="css/customStyles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#navbar1" data-offset="60">
+    <header class="bg-primary">
+        <div style="background-color: rgba(0,0,0,1);">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-12 mt-5">
+                        <div class="text-center m-0 mt-5 d-flex flex-column justify-content-center text-light">
+                            <h1 class="display-4 mt-5">
+                                Test your speed
+                            </h1>
+                            <div class="row w-50" style="margin: 2.5vh auto;">
+                                <div class="col-md-3 mx-auto">
+                                    <div class="input-group mb-3" style="justify-content: center;">
+                                        <button class="btn btn-outline-light btn-lg rounded-right" type="button">
+                                            Content Bound</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mx-auto">
+                                    <div class="input-group mb-3" style="justify-content: center;">
+                                        <button class="btn btn-outline-light btn-lg rounded-right" type="button">
+                                            Time Bound</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="timerVal" class="mt-2">Select Time: &nbsp;&nbsp;&nbsp;</label>
+                    <select id="timerVal" onchange="setTimerVal()">
+                        <option value="15">15s</option>
+                        <option value="30">30s</option>
+                        <option value="60" selected>60s</option>
+                        <option value="90">90s</option>
+                        <option value="120">120s</option>
+                    </select>
+                    <section class="container mt-0 pb-5">
+                        <div class="row mt-0 pb-5">
+                            <div class="col-12 my-auto mt-0 py-5">
+                                <div class="row text-center mt-0 py-4">
+
+                                    <div class="wrapper">
+                                        <div class="content-box">
+                                            <div class="content">
+                                                <ul class="result-details">
+                                                    <li class="time">
+                                                        <p>Time Left:</p>
+                                                        <span><b>60</b>s</span>
+                                                    </li>
+                                                    <li class="mistake">
+                                                        <p>Mistakes:</p>
+                                                        <span>0</span>
+                                                    </li>
+                                                    <li class="wpm">
+                                                        <p>WPM:</p>
+                                                        <span>0</span>
+                                                    </li>
+                                                    <li class="accuracy">
+                                                        <p>Accuracy:</p>
+                                                        <span>0</span>
+                                                    </li>
+                                                </ul>
+                                                <button>Try Again</button>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="input-field">
+                                        <div class="typing-text">
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
+        <div class="container">
+            <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html">Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="instructions.html">Compete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="winners.html">Winners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <footer id="footer" class="bg-dark text-light pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h6 class="text-uppercase">Contact Details:</h6>
+                    <ul class="nav flex-column">
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-2 text-right">
+                    <h6 class="text-uppercase">Follow</h6>
+                    <ul class="nav float-right">
+                        <li><a class="text-white mr-2" rel="nofollow" href="http://twitter.com/ThemesGuide"
+                                title="Follow on Twitter"><i
+                                    class="h1 fa fa-fw fa-twitter fa-2x ion-logo-twitter"></i></a></li>
+                        <li><a class="text-white mr-2" rel="nofollow" href="https://www.facebook.com/codeply"
+                                title="Follow on Facebook"><i
+                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-facebook"></i></a></li>
+                        <li><a class="text-white mr" rel="nofollow"
+                                href="https://github.com/ThemesGuide/bootstrap-themes" title="Follow on GitHub"><i
+                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mt-5 pb-3">Designed by Team Ananta'22</p>
+        </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <script src="js/typing.js"></script> -->
+    <script src="js/paragraphs.js"></script>
+    <!-- <script>
+        function setTimerVal() {
+            timerVal = parseInt(document.getElementById('timerVal').value)
+            console.log(timerVal, typeof(timerVal))
+        }
+    </script> -->
+    <script src="js/test.js"></script>
+</body>
+
+</html>
