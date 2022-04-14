@@ -51,20 +51,34 @@ function initTyping() {
         inpField.disabled = true
         document.querySelector("li.mistake").style.display = "inline-block"
         document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 
 function checkCalc() {
     let inpFieldVal = inpField.value;
-    inpFieldVal.padEnd(word.length, "*")
+    // if (inpFieldVal.length<word.length)
+    //     inpFieldVal.padEnd(word.length, "*")
+    // else if (inpFieldVal.length>word.length)
+    //     word.padEnd(inpFieldVal.length, "*")
     let correct = true
+    if (inpFieldVal.length-1 != word.length) {
+        correct = false
+    }
+    if (inpFieldVal.length-1 > word.length) {
+        // correct = false
+        totalWords += (inpFieldVal.length-1 - word.length)
+        wrongWords += (inpFieldVal.length-1 - word.length)
+    }
     for (i = 0; i < word.length; i++) {
         if (inpFieldVal[i] != word[i]) {
-            correct = false
+            // correct = false
             wrongWords++
         }
         totalWords++
     }
+    // totalWords--
+    console.log(totalWords)
     if (correct) {
         wordElement.classList.add("correct")
     }
@@ -73,7 +87,7 @@ function checkCalc() {
     }
     inpField.dispatchEvent(new KeyboardEvent('keydown', { 'key': ' ' }))
     inpField.value = ''
-    let wpm = Math.round(((totalWords - wrongWords) / 5) / (maxTime - timeLeft) * 60);
+    let wpm = (((totalWords - wrongWords) / 5) / (maxTime - timeLeft) * 60).toFixed(0);
     wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
     wpmTag.innerText = wpm;
     mistakeTag.innerText = wrongWords;
@@ -89,13 +103,14 @@ function initTimer() {
     if (timeLeft > 0) {
         timeLeft--;
         timeTag.innerText = timeLeft;
-        let wpm = Math.round(((totalWords) / 5) / (maxTime - timeLeft) * 60);
+        let wpm = (((totalWords - wrongWords) / 5) / (maxTime - timeLeft) * 60).toFixed(0);
         wpmTag.innerText = wpm;
     } else {
         clearInterval(timer);
         inpField.disabled = true
         document.querySelector("li.mistake").style.display = "inline-block"
         document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 
@@ -105,6 +120,7 @@ inpField.addEventListener("keyup", function (e) {
     e = e.key
     initTyping()
     if (e == ' ') {
+        // totalWords++
         checkCalc()
     }
 });

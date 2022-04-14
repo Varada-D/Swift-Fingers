@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Typing | Swift Fingers | Ananta</title>
+    <link rel="icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/darkster.css" rel="stylesheet">
+    <link href="css/customStyles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        .content-box .content {
+            border-bottom: 0;
+        }
+
+        .typing-text p div {
+            padding-bottom: 0;
+            margin-bottom: 20px;
+            height: 6vh;
+        }
+
+        .typing-text p div.correct {
+            background: none;
+        }
+
+        .typing-text p div.correct span {
+            color: #09eba0;
+        }
+
+        .typing-text p div.incorrect {
+            border-bottom: 2px solid #ffa3a3c2;
+            background: none;
+            font-weight: 550;
+        }
+
+        .typing-text p div.incorrect span {
+            color: #ff5151c2;
+        }
+
+        .typing-text p div.active span {
+            color: #51e8ff;
+        }
+
+        .typing-text p div.active {
+            border-radius: 5px;
+            border-bottom: 2px solid #17A2B8;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-bottom: none;
+            }
+        }
+
+        li.time span,
+        li.accuracy span,
+        li.wpm span {
+            font-weight: 900;
+            margin: 0;
+        }
+
+        li.time,
+        li.accuracy,
+        li.wpm {
+            border: 5px solid #09eba0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .time,
+        .accuracy,
+        .wpm {
+            padding: 5vh;
+            width: 30%;
+            /* border: 1px solid #b5f4df; */
+            color: #004680;
+            border-radius: 5vh;
+            background-color: #0985eb8d;
+            background: radial-gradient(#00e5ff, #0985eb8d);
+            /* box-shadow: 0px 0px 10px 2px #b5f4df; */
+            font-weight: 900;
+        }
+
+
+        .wpm {
+            padding: 5vh;
+            /* border: 1px solid #b5f4df; */
+            border-radius: 5vh;
+            color: #755700;
+            background-color: #9f7804;
+            background: radial-gradient(#ffee35, #9f7804);
+            /* box-shadow: 0px 0px 10px 2px #b5f4df; */
+            z-index: 999;
+        }
+
+        .time label,
+        .accuracy label,
+        .wpm label {
+            font-size: 120%;
+            font-weight: 900;
+        }
+
+        .result_icon {
+            /* margin-top: -15px; */
+            font-size: 15vh;
+        }
+
+        footer {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar1" data-offset="60">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
+        <div class="container">
+            <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html">Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="instructions.html">Compete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="winners.html">Winners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main style="background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem;">
+        <section class="container mt-0 py-5">
+            <div class="row mt-0 py-5">
+                <div class="col-12 my-auto mt-0 py-5">
+                    <div class="row text-center mt-0 py-5">
+
+                        <div class="" id="registrationForm" tabindex="-1"
+                            style="margin: auto; width: 50vw; min-width: 300px; background-color: rgba(0,0,0,0);">
+                            <div class="-dialog -dialog-centered -dialog-scrollable">
+                                <div class="-content"
+                                    style="overflow-x: hidden; box-shadow:  1px 1px 10px 1px #b7ccff; background-color: rgb(0,0,0); padding: 5vh;">
+                                    <div class="-header">
+                                        <h1 class="-title section-title pb-0" style="color: #f0f0f0">REGISTER NOW</h1>
+                                    </div>
+                                    <form class="needs-validation" id="registerform" style="margin: 0 auto;" novalidate>
+                                        <div class="-body">
+                                            <div class="col-md-12 form-group mt-3">
+                                                <input type="text" name="name" class="form-control" id="name"
+                                                    placeholder="Your Name" required>
+                                            </div>
+                                            <div class="col-md-12 form-group mt-3">
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                    placeholder="Your Email" required>
+                                            </div>
+                                            <div class="col-md-12 form-group mt-3">
+                                                <input type="text" name="phone" class="form-control" id="phone"
+                                                    placeholder="Your Phone Number" required>
+                                            </div>
+                                            <div class="col-md-12 form-group mt-3 autocomplete">
+                                                <input type="text" name="university" class="form-control"
+                                                    id="university" placeholder="University Name" required>
+                                            </div>
+                                            <div class="col-md-12 form-group mt-3">
+                                                <input type="text" name="city" class="form-control" id="city"
+                                                    placeholder="City" required>
+                                            </div>
+                                            <div class="row mx-auto mt-3">
+                                                <div class="col-md-6 form-group" style="display: inline-block;">
+                                                    <select name="gender" id="gender" required class="custom-select"
+                                                        required>
+                                                        <option value="" disabled selected>Select Gender</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Male">Male</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <select name="paymenttype" id="paymenttype" required
+                                                        class="custom-select" required>
+                                                        <option value="">Payment method</option>
+                                                        <option value="Online" selected>Online</option>
+                                                        <option value="Cash">Cash</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mx-auto mt-0">
+                                                <div class="col-md-6 form-group" style="display: inline-block;">
+                                                    <select name="vol_name" id="vol_name" class="custom-select" required>
+                                                        <option value="" disabled selected>Select Volunteer</option>
+                                                        <option value="Varada Deshpande">Varada Deshpande</option>
+                                                        <option value="Parth Thakkar">Parth Thakkar</option>
+                                                        <option value="Khyat Talsaniya">Khyat Talsaniya</option>
+                                                        <option value="Mahek Chawda">Mahek Chawda</option>
+                                                        <option value="Krushna Purohit">Krushna Purohit</option>
+                                                        <option value="Prajwal A Huggi">Prajwal A Huggi</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 form-group" style="display: inline-block;">
+                                                    <input type="password" class="form-control" name="vol_password"
+                                                        id="vol_password" placeholder="Volunteer Password"
+                                                        value="sf.tech.9687" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="-footer row mx-1" style="justify-content: space-between;">
+                                            <button type="submit"
+                                                class="btn btn-primary pt-1 mt-3 pb-2">Register</button>
+                                            <a class="mt-3 ml-3" onclick="alreadyRegistered()">Already registered before?</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="bg-dark text-light pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h6 class="text-uppercase">Contact Details:</h6>
+                    <ul class="nav flex-column">
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                        <li>
+                            Name 1:&nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">+91 12345 67890</a>
+                            &nbsp; | &nbsp;
+                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
+                                title="Bootstrap theme builder">abc@xyz.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-2 text-right">
+                    <h6 class="text-uppercase">Follow</h6>
+                    <ul class="nav float-right">
+                        <li><a class="text-white mr-2" rel="nofollow" href="http://twitter.com/ThemesGuide"
+                                title="Follow on Twitter"><i
+                                    class="h1 fa fa-fw fa-twitter fa-2x ion-logo-twitter"></i></a></li>
+                        <li><a class="text-white mr-2" rel="nofollow" href="https://www.facebook.com/codeply"
+                                title="Follow on Facebook"><i
+                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-facebook"></i></a></li>
+                        <li><a class="text-white mr" rel="nofollow"
+                                href="https://github.com/ThemesGuide/bootstrap-themes" title="Follow on GitHub"><i
+                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mt-5 pb-3">Designed by Team Ananta'22</p>
+        </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

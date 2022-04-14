@@ -65,10 +65,16 @@ function initTyping() {
         accuracyTag.innerText = accuracy.toFixed(0) + "%"
         if (charIndex >= characters.length - 1) {
             clearInterval(timer);
+            document.querySelector("li.mistake").style.display = "inline-block"
+            document.querySelector("li.accuracy").style.display = "inline-block"
+            document.querySelector("li.wpm").style.display = "inline-block"
         }
     } else {
         clearInterval(timer);
         inpField.value = "";
+        document.querySelector("li.mistake").style.display = "inline-block"
+        document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 
@@ -80,6 +86,9 @@ function initTimer() {
         wpmTag.innerText = wpm;
     } else {
         clearInterval(timer);
+        document.querySelector("li.mistake").style.display = "inline-block"
+        document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 

@@ -66,6 +66,9 @@ function initTyping() {
         isTyping = false;
         clearInterval(timer);
         inpField.value = "";
+        document.querySelector("li.mistake").style.display = "inline-block"
+        document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 
@@ -78,6 +81,9 @@ function initTimer() {
         timer+=0.1;
         let wpm = Math.round(((charIndex) / 5) / (timer) * 60);
         wpmTag.innerText = wpm;
+        document.querySelector("li.mistake").style.display = "inline-block"
+        document.querySelector("li.accuracy").style.display = "inline-block"
+        document.querySelector("li.wpm").style.display = "inline-block"
     }
 }
 

@@ -54,10 +54,14 @@
                                 <div class="row text-center mt-0 py-4">
 
                                     <div class="wrapper row" style="border-bottom: 1px solid #bfbfbf;">
-                                        <div class="content-box col-lg-4">
+                                        <div class="content-box col-12">
                                             <div class="content" style="border-bottom: none;">
                                                 <div class="col-12">
-                                                    <label for="timerVal" class="mt-2 mx-2">Select Time: </label>
+                                                    
+                                                </div>
+                                                <ul class="result-details col-12">
+                                                    <li>
+                                                        <label for="timerVal" class="mt-2 mx-2">Select Time: </label>
                                                     <select id="timerVal" onchange="setTimerVal()">
                                                         <option value="15">15s</option>
                                                         <option value="30">30s</option>
@@ -65,21 +69,21 @@
                                                         <option value="90">90s</option>
                                                         <option value="120">120s</option>
                                                     </select>
-                                                </div>
-                                                <ul class="result-details col-12">
-                                                    <li class="time d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
+                                                    </li>
+                                                    <li class="time d-inline mt-4 mb-5 col-sm-6 col-md-3">
                                                         <p>Time Left:</p>
                                                         <span><b>60</b>s</span>
                                                     </li>
-                                                    <li class="mistake d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
+                                                    <!-- <li class="mistake d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12"> -->
+                                                        <li class="mistake">
                                                         <p>Mistakes:</p>
                                                         <span>0</span>
                                                     </li>
-                                                    <li class="wpm d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
+                                                    <li class="wpm d-inline mt-4 mb-5 col-sm-6 col-md-3">
                                                         <p>WPM:</p>
                                                         <span>0</span>
                                                     </li>
-                                                    <li class="accuracy d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
+                                                    <li class="accuracy d-inline mt-4 mb-5 col-sm-6 col-md-3">
                                                         <p>Accuracy:</p>
                                                         <span>0</span>
                                                     </li>
@@ -90,7 +94,7 @@
                                             </div>
                                         </div>
                                         <input type="text" class="input-field">
-                                        <div class="typing-text col-lg-8">
+                                        <div class="typing-text col-12">
                                             <p></p>
                                         </div>
                                     </div>

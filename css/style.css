@@ -138,6 +138,7 @@ body{
   flex-wrap: wrap;
   align-items: center;
   width: calc(100% - 140px);
+  /* width: calc(100% - 140px); */
   justify-content: space-between;
   color:white;
 }
@@ -148,10 +149,10 @@ body{
   position: relative;
   align-items: center;
 }
-.result-details li:not(:first-child){
-  padding-left: 22px;
-  /* border-left: 1px solid #bfbfbf; */
-}
+/* .result-details li:not(:first-child){
+  padding-left: 0;
+  border-left: 1px solid #bfbfbf;
+} */
 .result-details li p{
   font-size: 19px;
 }
@@ -165,6 +166,12 @@ li span b{
 }
 li:not(:first-child) span{
   font-weight: 500;
+}
+
+li.mistake,
+li.accuracy,
+li.wpm {
+  display: none;
 }
 @media (max-width: 745px) {
   /* .wrapper{
@@ -181,7 +188,7 @@ li:not(:first-child) span{
     text-align: left;
   }
   .content button{
-    width: 100%;
+    /* width: 100%; */
     font-size: 15px;
     padding: 10px 0;
     margin-top: 20px;
