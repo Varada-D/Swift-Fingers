@@ -25,14 +25,14 @@
 <body data-spy="scroll" data-target="#navbar1" data-offset="60">
     <header class="bg-primary">
         <div style="background-color: rgba(0,0,0,1);">
-            <div class="container">
+            <div class="container" style="margin-left: 0; margin-right: 0;">
                 <div class="row mt-5">
                     <div class="col-12 mt-5">
                         <div class="text-center m-0 mt-5 d-flex flex-column justify-content-center text-light">
-                            <h1 class="display-4 mt-5">
+                            <h1 class="display-4">
                                 Test your speed
                             </h1>
-                            <div class="row w-50" style="margin: 2.5vh auto;">
+                            <!-- <div class="row w-50" style="margin: 2.5vh auto;">
                                 <div class="col-md-3 mx-auto">
                                     <div class="input-group mb-3" style="justify-content: center;">
                                         <button class="btn btn-outline-light btn-lg rounded-right" type="button">
@@ -45,7 +45,7 @@
                                             Time Bound</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <section class="container mt-0 pb-5">
@@ -54,14 +54,14 @@
                                 <div class="row text-center mt-0 py-4">
 
                                     <div class="wrapper row" style="border-bottom: 1px solid #bfbfbf;">
-                                        <div class="content-box col-lg-4">
-                                            <div class="content" style="border-bottom: none;">
+                                        <div class="content-box col-lg-3">
+                                            <div class="content mt-0" style="border-bottom: none;">
                                                 <div class="col-12">
                                                     <label for="timerVal" class="mt-2 mx-2">Select Time: </label>
-                                                    <select id="timerVal" onchange="setTimerVal()">
+                                                    <select id="timerVal" class="custom-select col-6" onchange="setTimerVal()">
                                                         <option value="15">15s</option>
-                                                        <option value="30">30s</option>
-                                                        <option value="60" selected>60s</option>
+                                                        <option value="30" selected>30s</option>
+                                                        <option value="60">60s</option>
                                                         <option value="90">90s</option>
                                                         <option value="120">120s</option>
                                                     </select>
@@ -69,7 +69,7 @@
                                                 <ul class="result-details col-12">
                                                     <li class="time d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
                                                         <p>Time Left:</p>
-                                                        <span><b>60</b>s</span>
+                                                        <span><b>30</b>s</span>
                                                     </li>
                                                     <li class="mistake d-inline mt-4 mb-5 col-12 col-sm-6 col-md-3 col-lg-12">
                                                         <p>Mistakes:</p>
@@ -90,7 +90,7 @@
                                             </div>
                                         </div>
                                         <input type="text" class="input-field">
-                                        <div class="typing-text col-lg-8">
+                                        <div class="typing-text col-lg-9" style="width: 150vh; flex: 0 0 75%;">
                                             <p></p>
                                         </div>
                                     </div>
