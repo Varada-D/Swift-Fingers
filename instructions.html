@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Typing | Swift Fingers | Ananta</title>
+    <link rel="icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/darkster.css" rel="stylesheet">
+    <link href="css/customStyles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        #competition {
+            margin: 5vw;
+            padding: 3vw;
+            border: 2px solid gray;
+        }
+
+        label {
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        li div {
+            border: 1px solid gray;
+        }
+
+        .rounds {
+            width: 30%;
+            margin: 2%;
+        }
+
+        .rd-title,
+        .rd-head {
+            display: block;
+            text-align: center;
+            background-color: rgb(10, 20, 30);
+            color: white;
+        }
+
+        #inst-start-btn {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar1" data-offset="60">
+    <main style="background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem;">
+        <section class="container mt-0 pb-3">
+            <div class="row mt-0">
+                <div class="col-12 my-auto mt-0">
+                    <div class="row mb-0">
+                        <h1 class="display-4 mb-3 pt-5" style="margin: 0 auto;">Instructions</h1>
+                        <ul>
+                            <li>Participants is going to have 3 rounds in total. Each round is mandatory in order to
+                                compelete the competition.</li>
+                            <li>In Each round, countdown will hold until you start typing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>
+            <section class="container">
+                <div class="row">
+                    <div class="col-12 pb-5">
+                        <div class="row text-center">
+                            <div class="col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <!-- <h1 class="display-2 text-primary"><span
+                                                class="ion ion-md-speedometer"></span>
+                                        </h1> -->
+                                        <h5 class="card-title text-primary mt-3">Round 1</h5>
+                                        <h4 class="card-title text-primary">Speed Run</h4>
+                                        <ul class="text-justify px-3 mt-3">
+                                            <li>Competitor have to type given context.</li>
+                                            <li>No Time limit.</li>
+                                            <li>Word limit: 50-70</li>
+                                            <li>Contest contains basic puncutation.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <h5 class="card-title text-primary mt-3">Round 2</h5>
+                                        <h4 class="card-title text-primary">Timescapes</h4>
+                                        <ul class="text-justify px-3 mt-3">
+                                            <li>Competitor have to type given context as much as possible in given span
+                                                of time.</li>
+                                            <li>Time: 60sec.</li>
+                                            <li>Word limit: 50-70</li>
+                                            <li>Contest contains basic puncutation.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <h5 class="card-title text-primary mt-3">Round 3</h5>
+                                        <h4 class="card-title text-primary">Blind Typing</h4>
+                                        <ul class="text-justify px-3 mt-3">
+                                            <li>Competitor have to type given context as much as possible in given span
+                                                of time.</li>
+                                            <li>Time limit: 60sec.</li>
+                                            <li>Word limit: 50-200</li>
+                                            <li>Contest contains basic puncutation.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="display-5 mt-3 pt-5 pt-3 text-center">Rules and Regulations</h2>
+                            <div class="row text-justify">
+                                <ul class="text-justify px-3">
+                                    <li>All participants must abide by the rules and regulations, and follow the
+                                        instructions of the event coordinators and volunteers.</li>
+                                    <li>The participant must not refresh/ close the browser while a round is ongoing as
+                                        she/he would not be allowed to re-enter/ re-attempt the round. The participant
+                                        would however be able to participate in the upcoming round(s) regardless and the
+                                        result of the previous round will be considered as 0. </li>
+                                </ul>
+                                <div id="inst-start-btn" class="col-12 text-center mt-3">
+                                    <button class="btn btn-primary pt-1 mt-1 pb-2 mx-auto">Start</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer" class="bg-dark text-light">
+        <div class="container pt-5">
+            <p class="text-center pb-3">Designed by Team Ananta'22</p>
+        </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
