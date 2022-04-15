@@ -996,6 +996,8 @@ select.form-control:focus::-ms-value {
     opacity: 1;
     left: 1.3rem;
     font-size: 0.8rem;
+    color: #FF550B;
+    border-radius: 0.5rem;
 }
 
 .col-form-label-lg {
@@ -1384,6 +1386,9 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 576px) {
+    .container {
+        max-width: none;
+    }
     .form-inline label {
         display: flex;
         align-items: center;
@@ -3238,6 +3243,10 @@ select option {
         padding-right: 0;
         padding-left: 0;
     }
+    /* .typing-text p{
+        padding: 2vh;
+        width: 48vh;
+    } */
 }
 
 @media (min-width: 576px) {
@@ -3272,6 +3281,10 @@ select option {
     .navbar-expand-sm .navbar-toggler {
         display: none;
     }
+    /* .typing-text p{
+        padding: 2vh;
+        width: 58vh;
+    } */
 }
 
 @media (max-width: 767.98px) {
@@ -3284,6 +3297,9 @@ select option {
 }
 
 @media (min-width: 768px) {
+    .container {
+        max-width: none;
+    }
     .navbar-expand-md {
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -3315,6 +3331,10 @@ select option {
     .navbar-expand-md .navbar-toggler {
         display: none;
     }
+    /* .typing-text p{
+        padding: 2vh;
+        width: 75vh;
+    } */
 }
 
 @media (max-width: 991.98px) {
@@ -3327,6 +3347,10 @@ select option {
 }
 
 @media (min-width: 992px) {
+    
+    .container {
+        max-width: none;
+    }
     .navbar-expand-lg {
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -3370,6 +3394,9 @@ select option {
 }
 
 @media (min-width: 1200px) {
+    .container {
+        max-width: none;
+    }
     .navbar-expand-xl {
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -3401,6 +3428,13 @@ select option {
     .navbar-expand-xl .navbar-toggler {
         display: none;
     }
+    .container {
+        width: 100vw;
+    }
+    /* .typing-text p{
+        padding: 2vh;
+        width: 100%;
+    } */
 }
 
 .navbar-expand {

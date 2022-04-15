@@ -9,7 +9,7 @@ const typingText = document.querySelector(".typing-text p"),
 let totalWords = 0
 
 let timer,
-    maxTime = 60,
+    maxTime = 30,
     timeLeft = maxTime,
     charIndex = wrongWords = isTyping = 0;
 

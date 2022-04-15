@@ -54,7 +54,7 @@ function initTyping() {
         }
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
-        let wpm = Math.round(((charIndex) / 5) / (timer) * 60);
+        let wpm = Math.round(((charIndex - wrongWords) / 5) / (timer) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
         wpmTag.innerText = wpm;
         mistakeTag.innerText = wrongWords;
@@ -76,14 +76,14 @@ function initTimer() {
     timeTag.innerText = timer.toFixed(1);
     if (charIndex >= charLen - 1) {
         clearInterval(timer);
-    }
-    else {
-        timer+=0.1;
-        let wpm = Math.round(((charIndex) / 5) / (timer) * 60);
-        wpmTag.innerText = wpm;
         document.querySelector("li.mistake").style.display = "inline-block"
         document.querySelector("li.accuracy").style.display = "inline-block"
         document.querySelector("li.wpm").style.display = "inline-block"
+    }
+    else {
+        timer+=0.1;
+        let wpm = Math.round(((charIndex - wrongWords) / 5) / (timer) * 60);
+        wpmTag.innerText = wpm;
     }
 }
 

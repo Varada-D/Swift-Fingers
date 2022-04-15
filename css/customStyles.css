@@ -10,7 +10,6 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	/* box-shadow: inset 0 0 5px grey; */
     background: none;
 	border-radius: 10px;
 }
@@ -20,10 +19,5 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #0a0a0a;
-  	/* -o-background-image: linear-gradient(#818181, #adb5bd);
-  	-webkit-background-image: linear-gradient(#818181, #adb5bd);
-  	-moz-background-image: linear-gradient(#818181, #adb5bd);
-  	-ms-background-image: linear-gradient(#818181, #adb5bd);
-  	background-image: linear-gradient(#818181, #adb5bd); */
 	border-radius: 10px;
 }

@@ -9,12 +9,17 @@
     <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="css/darkster.css" rel="stylesheet">
     <link href="css/customStyles.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <style>
+    body {
+        overflow-y: hidden;
+    }
+
     header {
         background-image: url('img/bg.png');
         background-repeat: no-repeat;
@@ -22,44 +27,67 @@
         background-position: center top;
         width: 100vw;
     }
+
+    .title {
+        /* position: absolute;   */
+        padding-top: 25vh;
+        transform: translateX(50%, 0);
+        font-size: 200%;
+        /* height: 100vh; */
+        transition-duration: 2s;
+        padding-left: 25vw;
+        padding-right: 25vw;
+        animation: fadeIn 2s linear;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .title>h1>span {
+        font-size: 500%;
+        transition-duration: 2s;
+    }
+
+    .title>h1:last-child {
+        font-size: 250%;
+        font-weight: 900;
+        transition-duration: 2s;
+    }
+
+    main {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100vh;
+        left: 0;
+        transition-duration: 2s;
+    }
+
+    footer {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition-duration: 2s;
+    }
 </style>
 
-<body data-spy="scroll" data-target="#navbar1" data-offset="60">
-    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
-        <div class="container">
-            <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="test.html">Test</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="compete.html">Compete</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="winners.html">Winners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="scoreboard.html">Scoreboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.html">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Log In</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-    <main style="background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem; min-height: 100vh; margin: auto 0;">
-        <section class="container mt-0">
+<body data-spy="scroll" data-target="#navbar1" data-offset="60"
+    style="background-image: linear-gradient(to bottom, #0a0a0a, #000000);">
+    <div class="title" style="height: 100vh; width: 100vw;">
+        <h1 class="col-12 text-primary text-center"><span class="ion ion-md-speedometer"></span></h1>
+        <h1 class="col-12 text-center">Round 1</h1>
+        <h1 class="col-12 text-center">Speed Run</h1>
+    </div>
+    <main
+        style="background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem; min-height: 100vh; margin: auto 0;">
+        <section class="container mt-0 py-5">
             <div class="row mt-0 py-5">
                 <div class="col-12 my-auto mt-0 pt-5">
                     <div class="row text-center mt-0 pt-4">
@@ -99,51 +127,6 @@
     </main>
     <footer id="footer" class="bg-dark text-light">
         <div class="container">
-            <!-- <div class="row">
-                <div class="col-md-6 mb-5">
-                    <h6 class="text-uppercase">Contact Details:</h6>
-                    <ul class="nav flex-column">
-                        <li>
-                            Name 1:&nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">+91 12345 67890</a>
-                            &nbsp; | &nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">abc@xyz.com</a>
-                        </li>
-                        <li>
-                            Name 1:&nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">+91 12345 67890</a>
-                            &nbsp; | &nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">abc@xyz.com</a>
-                        </li>
-                        <li>
-                            Name 1:&nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">+91 12345 67890</a>
-                            &nbsp; | &nbsp;
-                            <a class="text-white" target="ext" rel="nofollow" href="https://themestr.app"
-                                title="Bootstrap theme builder">abc@xyz.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6 mb-2 text-right">
-                    <h6 class="text-uppercase">Follow</h6>
-                    <ul class="nav float-right">
-                        <li><a class="text-white mr-2" rel="nofollow" href="http://twitter.com/ThemesGuide"
-                                title="Follow on Twitter"><i
-                                    class="h1 fa fa-fw fa-twitter fa-2x ion-logo-twitter"></i></a></li>
-                        <li><a class="text-white mr-2" rel="nofollow" href="https://www.facebook.com/codeply"
-                                title="Follow on Facebook"><i
-                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-facebook"></i></a></li>
-                        <li><a class="text-white mr" rel="nofollow"
-                                href="https://github.com/ThemesGuide/bootstrap-themes" title="Follow on GitHub"><i
-                                    class="h1 fa fa-fw fa-facebook fa-2x ion-logo-github"></i></a></li>
-                    </ul>
-                </div>
-            </div> -->
             <p class="text-center pb-3">Designed by Team Ananta'22</p>
         </div>
     </footer>
@@ -153,6 +136,34 @@
     <!-- <script src="js/typing.js"></script> -->
     <script src="js/paragraphs.js"></script>
     <script src="js/speedRun.js"></script>
+    <script>
+        document.onload = setTimeout(function () {
+            document.querySelector('body').style.overflowY = 'auto'
+            document.querySelector('.title').style.display = 'flex'
+            document.querySelector('.title').style.height = 'auto'
+            document.querySelector('.title').style.alignItems = 'center'
+            document.querySelector('.title').style.backgroundColor = 'rgba(0,0,0,0)'
+            document.querySelector('.title').style.zIndex = '999'
+            document.querySelector('.title').children[1].style.display = 'none'
+            document.querySelector('.title').style.position = 'absolute'
+            document.querySelector('.title').style.top = '0'
+            document.querySelector('.title').style.left = '0'
+            document.querySelector('.title').style.padding = '1rem'
+            document.querySelector('.title').children[0].children[0].style.fontSize = '200%'
+            document.querySelector('.title').children[0].classList.remove('col-12')
+            document.querySelector('.title').children[0].classList.add('p-2')
+            document.querySelector('.title').children[2].style.fontSize = '120%'
+            document.querySelector('.title').children[2].classList.remove('col-12')
+            document.querySelector('.title').children[2].classList.remove('text-center')
+            document.querySelector('.title').children[2].classList.add('p-2')
+            document.querySelector('main').style.visibility = 'visible'
+            document.querySelector('main').style.opacity = '1'
+            document.querySelector('main').style.top = '0'
+            document.querySelector('main').style.paddingTop = '2.5rem'
+            document.querySelector('footer').style.visibility = 'visible'
+            document.querySelector('footer').style.opacity = '1'
+        }, 1500)
+    </script>
 </body>
 
 </html>
