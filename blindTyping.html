@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="css/darkster.css" rel="stylesheet">
   <link href="css/customStyles.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -68,6 +69,67 @@
       transition-duration: 2s;
     }
 
+
+
+    li.time span,
+    li.accuracy span,
+    li.wpm span {
+      font-weight: 900;
+      margin: 0;
+    }
+
+    li.accuracy,
+    li.wpm {
+      display: none;
+    }
+
+    div.time,
+    div.accuracy,
+    div.wpm {
+      padding: 5vh;
+      width: 30%;
+      color: #004680;
+      border-radius: 5vh;
+      background-color: #0985eb8d;
+      background: radial-gradient(#00e5ff, #0985eb8d);
+      font-weight: 900;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    div.wpm {
+      padding: 5vh;
+      /* border: 1px solid #b5f4df; */
+      border-radius: 5vh;
+      color: #755700;
+      background-color: #9f7804;
+      background: radial-gradient(#ffee35, #9f7804);
+      /* box-shadow: 0px 0px 10px 2px #b5f4df; */
+      z-index: 999;
+    }
+
+    div.time label,
+    div.accuracy label,
+    div.wpm label {
+      font-size: 120%;
+      font-weight: 900;
+    }
+
+    .nxt {
+      visibility: hidden;
+      opacity: 0;
+      transition-delay: 2s;
+      transition-duration: 2s;
+    }
+
+    .result_icon {
+      /* margin-top: -15px; */
+      font-size: 15vh;
+    }
+
+
+
+
     footer {
       display: none;
       visibility: hidden;
@@ -124,7 +186,7 @@
     <h1 class="col-12 text-center">Round 3</h1>
     <h1 class="col-12 text-center">Blind Typing</h1>
   </div>
-  <main style="background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem;">
+  <main style="width: 100%; background-image: linear-gradient(to bottom, #0a0a0a, #000000); padding-bottom: 0.9rem;">
     <section class="container mt-0 pb-5">
       <div class="row mt-0 py-5">
         <div class="col-12 my-auto mt-0 py-5">
@@ -135,8 +197,8 @@
                 <div class="content">
                   <ul class="result-details">
                     <li class="time">
-                      <p>Time Spent:</p>
-                      <span><b>0</b>s</span>
+                      <p>Time Left:</p>
+                      <span><b>60</b>s</span>
                     </li>
                     <li class="mistake" class="d-flex">
                       <p>Mistakes:</p>

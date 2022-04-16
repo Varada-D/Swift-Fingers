@@ -217,11 +217,11 @@
 
 <body data-spy="scroll" data-target="#navbar1" data-offset="60"
     style="background-image: linear-gradient(to bottom, #0a0a0a, #000000);">
-    <div class="title">
+    <div class="title col-12 justify-content-center">
         <div class="d-flex" style="align-items: center">
-            <h1 class="text-primary"><span class="ion ion-md-speedometer"></span></h1>
+            <!-- <h1 class="text-primary"><span class="ion ion-md-speedometer"></span></h1> -->
             <!-- <h1 class="col-12 text-center">Round 1</h1> -->
-            <h1 class="px-2">Speed Run</h1>
+            <h1 class="px-2">Swift Fingers</h1>
         </div>
     </div>
     <main
@@ -230,7 +230,7 @@
             <div class="row mt-0 py-5">
                 <div class="col-12 my-auto mt-0 py-5">
                     <div class="row text-center mt-0 py-3">
-                        <h1 class="col-12 text-center">Your Scores for the Round</h1>
+                        <h1 class="col-12 text-center">Your Average Scores</h1>
                         <div class="wrapper">
                             <div class="content-box">
                                 <div class="content"
@@ -249,7 +249,8 @@
                                         <div style="margin-top:-15px; margin-bottom: 2vh;">
                                             <i class="bi bi-speedometer2 result_icon"></i>
                                         </div>
-                                        <label style="text-align: center; display: block; height: 20px;">100</label>
+                                        <label style="text-align: center; display: block; height: 20px; font-size: 90%; font-weight: 400;">(80+100+90)/3</label>
+                                        <label style="text-align: center; display: block; height: 20px; font-size: 120%;">90</label>
                                         <label style="text-align: center; display: block;">WPM</label>
                                     </div>
 
@@ -265,7 +266,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center nxt">
-                        <a class="btn btn-primary" href="timescape.html">Next Round</a>
+                        <a class="btn btn-primary" href="index.html">Finish</a>
                     </div>
                 </div>
             </div>
@@ -284,8 +285,8 @@
             // function viewScore() {
             scrollTo(0, 0)
             document.querySelector('body').style.overflowY = 'auto'
-            document.querySelector('.title').classList.add('col-12')
-            document.querySelector('.title').style.paddingLeft = '40vw'
+            // document.querySelector('.title').classList.add('col-12')
+            // document.querySelector('.title').style.paddingLeft = '40vw'
             document.querySelector('main').style.visibility = 'visible'
             document.querySelector('main').style.opacity = '1'
             document.querySelector('main').style.top = '0'
