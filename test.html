@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swift Fingers | Ananta</title>
-    <link rel="icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="http://themes.guide/favicon.ico" type="image/x-icon" />
+    <title>Test | Swift Fingers | Ananta</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
@@ -14,6 +14,15 @@
     <link href="css/customStyles.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
+        img.reload {
+            width: 50%;
+            transition-duration: 1s;
+            opacity: 0.5;
+        }
+        img.reload:hover {
+            transform: scale(120%);
+            opacity: 1;
+        }
         @media screen and (max-width: 992px) {
             .result-details {
                 display: contents;
@@ -53,7 +62,7 @@
                             <div class="col-12 my-auto mt-0 py-5">
                                 <div class="row text-center mt-0 py-4">
 
-                                    <div class="wrapper row" style="border-bottom: 1px solid #bfbfbf;">
+                                    <div class="wrapper row">
                                         <div class="content-box col-lg-3">
                                             <div class="content mt-0" style="border-bottom: none;">
                                                 <div class="col-12">
@@ -84,8 +93,7 @@
                                                         <span>0</span>
                                                     </li>
                                                 </ul>
-                                                <div class="col-12"><button class="button mt-3"><i class="bi bi-arrow-clockwise bi-md"
-                                                            style="font-size: 150%; font-weight: 900;"></i></button>
+                                                <div class="col-12"><button class="mt-3" style="background-color: rgba(0,0,0,0); border: none;"><img src="img/reload.png" class="reload"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,7 +114,8 @@
     </header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
         <div class="container">
-            <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
+            <a class="navbar-brand logo px-3 mr-1 mb-1 mt-0 text-primary" href="../">SF<span style="color: #f0f0f0;">_</span></a>
+            <a class="navbar-brand px-3 mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>

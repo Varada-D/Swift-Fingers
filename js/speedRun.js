@@ -156,3 +156,7 @@ function initTimer() {
 loadParagraph();
 inpField.disabled = false
 inpField.addEventListener("input", initTyping);
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = 'Refresh Tried'
+  });

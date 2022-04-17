@@ -1,5 +1,6 @@
 /*! Themestr.app `Darkster` Bootstrap 4.3.1 theme */
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:200,300,400,700);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
 /*! Import Bootstrap 4 variables */
 /*!
@@ -8537,4 +8538,26 @@ a.text-dark:focus {
 
 .navbar-dark.bg-primary {
     background-color: #111111 !important;
+}
+
+
+
+
+.logo {
+    font-family: 'Roboto Slab', serif;
+    font-size: 180%;
+    border-right: #f0f0f0 1px solid; 
+    /* color: var(--primary); */
+}
+
+.logo span {
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+    0% { visibility: visible; 
+    opacity: 1;}
+    50% { visibility: hidden; 
+    opacity: 0}
 }
