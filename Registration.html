@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Statistics | Swift Fingers | Ananta'22</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="css/darkster.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/DashboardCSS.css">
+</head>
+
+
+<body>
+	<div class="sidebar active">
+		<div class="logo-details">
+			<!-- <img src="img/logo.png" id="logo-img" alt="Exotika" />
+			<span id="logo-name" href="index.html" target="_blank"><span>_</span></span> -->
+			<a class="logo-name" href="index.html">SF</a>
+		</div>
+		<ul class="nav-links">
+			<li><a href="Statistics.html"><i class='bx bx-grid-alt'></i><span class="links_name">Statistics</span></a>
+			</li>
+			<li><a href="Register.html"><i class='bx bx-walk'></i><span class="links_name">Register</span></a>
+			</li>
+			<li><a href="Scoreboard.html"><i class='bx bx-walk'></i><span class="links_name">Scoreboard</span></a>
+			</li>
+			<li><a href="Scoreboard.html"><i class='bx bx-walk'></i><span class="links_name">Secret Key</span></a>
+			</li>
+			<li onmouseover="ParticipantToggle()" onmouseout="ParticipantToggle()">
+				<button><i class='bx bx-grid-alt'></i>Participant</button>
+				<ul class="ParticipantMenu d-none">
+					<li><a href="ParticipantInfo.html"><i class='bx bx-walk'></i><span
+								class="links_name">Information</span></a></li>
+					<li><a href="ParticipantResult.html"><i class='bx bx-walk'></i><span
+								class="links_name">Result</span></a></li>
+				</ul>
+			</li>
+			<li class="log_out"><a href="Home.html"><i class='bx bx-log-out'></i><span class="links_name">Log
+						out</span></a></li>
+		</ul>
+	</div>
+
+	<section class="registrations">
+		<nav>
+			<div class="sidebar-button">
+				<i class='bx bx-menu sidebarBtn'></i>
+				<span class="dashboard">Dashboard</span>
+			</div>
+			<div class="profile-details">
+				<img src="https://img.icons8.com/bubbles/500/000000/system-administrator-female.png" alt="" />
+				<span class="name">Admin</span>
+			</div>
+		</nav>
+
+		<div class="registrationGlance">
+			<div>
+
+				<div class="" id="registrationForm" tabindex="-1"
+					style="margin: auto; width: 50vw; min-width: 300px; background-color: rgba(0,0,0,0);">
+					<div class="-dialog -dialog-centered -dialog-scrollable">
+						<div class="-content"
+							style="overflow-x: hidden; box-shadow:  1px 1px 10px 1px #b7ccff; background-color: rgb(0,0,0); padding: 5vh; border-radius: 10px;">
+							<div class="-header">
+								<h1 class="-title section-title pb-0" style="color: #f0f0f0">REGISTER NOW</h1>
+							</div>
+							<form class="needs-validation" id="registerform" style="margin: 0 auto;" novalidate>
+								<div class="-body">
+									<div class="col-md-12 form-group mt-3">
+										<input type="text" name="name" class="form-control" id="name"
+											placeholder="Your Name" required>
+										<label class="col-form-label">Your Name</label>
+									</div>
+									<div class="col-md-12 form-group mt-3">
+										<input type="email" class="form-control" name="email" id="email"
+											placeholder="Your Email" required>
+										<label class="col-form-label">Your Email</label>
+									</div>
+									<div class="col-md-12 form-group mt-3">
+										<input type="text" name="phone" class="form-control" id="phone"
+											placeholder="Your Phone Number" required>
+										<label class="col-form-label">Your Phone Number</label>
+									</div>
+									<div class="col-md-12 form-group mt-3 autocomplete">
+										<input type="text" name="university" class="form-control" id="university"
+											placeholder="Institute Name" required>
+										<label class="col-form-label">Institute Name</label>
+									</div>
+									<div class="col-md-12 form-group mt-3">
+										<input type="text" name="city" class="form-control" id="city" placeholder="City"
+											required>
+										<label class="col-form-label">City</label>
+									</div>
+									<div class="col-md-12 row mx-auto mt-3">
+										<div class="col-md-6 form-group" style="display: inline-block;">
+											<select name="gender" id="gender" required class="custom-select">
+												<option value="" disabled selected>Select Gender</option>
+												<option value="Female">Female</option>
+												<option value="Male">Male</option>
+											</select>
+											<label class="col-form-label">Select Gender</label>
+										</div>
+										<div class="col-md-6 form-group">
+											<select name="paymenttype" id="paymenttype" required class="custom-select">
+												<option value="" disabled selected>Payment method</option>
+												<option value="Online">Online</option>
+												<option value="Cash">Cash</option>
+											</select>
+											<label class="col-form-label">Payment Method</label>
+										</div>
+									</div>
+									<div class="col-md-12 row mx-auto mt-0">
+										<div class="col-md-6 form-group" style="display: inline-block;">
+											<select name="vol_name" id="vol_name" class="custom-select" required>
+												<option value="" disabled selected>Select Volunteer</option>
+												<option value="Varada Deshpande">Varada Deshpande</option>
+												<option value="Parth Thakkar">Parth Thakkar</option>
+												<option value="Khyat Talsaniya">Khyat Talsaniya</option>
+												<option value="Mahek Chawda">Mahek Chawda</option>
+												<option value="Krushna Purohit">Krushna Purohit</option>
+												<option value="Prajwal A Huggi">Prajwal A Huggi</option>
+											</select>
+											<label class="col-form-label">Volunteer Name</label>
+										</div>
+										<div class="col-md-6 form-group" style="display: inline-block;">
+											<input type="password" class="form-control" name="vol_password"
+												id="vol_password" placeholder="Volunteer Password" value="sf.tech.9687"
+												required>
+											<label class="col-form-label">Volunteer Password</label>
+										</div>
+									</div>
+								</div>
+								<div class="-footer row mx-1" style="justify-content: space-between;">
+									<button type="submit" class="btn btn-primary pt-1 mt-3 pb-2">Register</button>
+									<a class="mt-3 ml-3" onclick="alreadyRegistered()">Already registered before?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+
+
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<!-- <script src="JS/Dashboard.js"></script> -->
+	<script>
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".sidebarBtn");
+		sidebarBtn.onclick = function () {
+			sidebar.classList.toggle("active");
+			if (sidebar.classList.contains("active")) {
+				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+				sidebar.style.paddingTop = "5vh"
+				document.querySelector(".logo-name span").style.display = "none";
+				document.querySelector(".logo-name").style.fontSize = "200%";
+				// document.getElementById("logo-img").style.width = "75%";
+				// document.getElementById("logo-img").style.margin = "0 0 0 0.5vw";
+			}
+			else {
+				sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+				sidebar.style.paddingTop = "2.5vh"
+				document.querySelector(".logo-name span").style.display = "inline-block";
+				document.querySelector(".logo-name").style.fontSize = "300%";
+				// document.getElementById("logo-img").style.width = "25%";
+				// document.getElementById("logo-img").style.margin = "0 2vw 0 1vw";
+			}
+		}
+	</script>
+	<script>
+		function ParticipantToggle() {
+			document.getElementsByClassName('ParticipantMenu')[0].classList.toggle('d-none')
+			document.getElementsByClassName('ParticipantMenu')[0].classList.toggle('d-block')
+		}
+	</script>
+</body>
+
+</html>
