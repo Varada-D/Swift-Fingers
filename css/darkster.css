@@ -8547,7 +8547,6 @@ a.text-dark:focus {
     font-family: 'Roboto Slab', serif;
     font-size: 180%;
     border-right: #f0f0f0 1px solid; 
-    /* color: var(--primary); */
 }
 
 .logo span {
@@ -8560,4 +8559,13 @@ a.text-dark:focus {
     opacity: 1;}
     50% { visibility: hidden; 
     opacity: 0}
+}
+
+a.activeTab {
+    color: #FF550B !important;
+    border-bottom: 1.5px solid #FF550B;
+    font-weight: 700;
+}
+a.activeTab:hover {
+    color: #f0f0f0 !important;
 }
