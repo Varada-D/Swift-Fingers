@@ -125,7 +125,9 @@
 	background: #343a40;
 }
 
-
+.sidebar .nav-links li button {
+	font-size: 1rem;
+}
 
 .sidebar .nav-links li i {
 	min-width: 60px;

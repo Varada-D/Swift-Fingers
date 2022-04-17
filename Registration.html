@@ -150,7 +150,6 @@
 
 
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<!-- <script src="JS/Dashboard.js"></script> -->
 	<script>
 		let sidebar = document.querySelector(".sidebar");
 		let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -159,18 +158,12 @@
 			if (sidebar.classList.contains("active")) {
 				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
 				sidebar.style.paddingTop = "5vh"
-				document.querySelector(".logo-name span").style.display = "none";
 				document.querySelector(".logo-name").style.fontSize = "200%";
-				// document.getElementById("logo-img").style.width = "75%";
-				// document.getElementById("logo-img").style.margin = "0 0 0 0.5vw";
 			}
 			else {
 				sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 				sidebar.style.paddingTop = "2.5vh"
-				document.querySelector(".logo-name span").style.display = "inline-block";
 				document.querySelector(".logo-name").style.fontSize = "300%";
-				// document.getElementById("logo-img").style.width = "25%";
-				// document.getElementById("logo-img").style.margin = "0 2vw 0 1vw";
 			}
 		}
 	</script>
