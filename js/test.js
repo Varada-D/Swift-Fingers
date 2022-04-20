@@ -37,6 +37,7 @@ function loadParagraph() {
 
 function initTyping() {
     document.getElementById('timerVal').disabled = true
+    document.querySelector('.content').children[0].style.display = 'none'
     let characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
     if (charIndex < characters.length - 1 && timeLeft > 0) {
@@ -63,10 +64,10 @@ function initTyping() {
         }
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
-
         let wpm = Math.round(((charIndex - wrongWords) / 5) / (maxTime - timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
 
+        // document.querySelector('.active').scrollIntoView()
         wpmTag.innerText = wpm;
         mistakeTag.innerText = wrongWords;
         let accuracy = ((1 - (wrongWords / totalWords)) * 100)
@@ -77,6 +78,11 @@ function initTyping() {
     } else {
         clearInterval(timer);
         inpField.value = "";
+        scrollTo(0, 0)
+        // document.querySelector('.mistake').style.display = 'block'
+        // document.querySelector('.wpm').style.display = 'block'
+        // document.querySelector('.accuracy').style.display = 'block'
+        // document.querySelector('.reloadBtn').style.display = 'block'
     }
 }
 
@@ -93,7 +99,13 @@ function initTimer() {
 
 
 function resetGame() {
+    // scrollTo(0,0)
     document.getElementById('timerVal').disabled = false;
+    // document.querySelector('.content').children[0].style.display = 'block'
+    // document.querySelector('.mistake').style.display = 'none'
+    // document.querySelector('.wpm').style.display = 'none'
+    // document.querySelector('.accuracy').style.display = 'none'
+    // document.querySelector('.reloadBtn').style.display = 'none'
     loadParagraph();
     clearInterval(timer);
     timeLeft = maxTime;
@@ -105,6 +117,25 @@ function resetGame() {
     cpmTag.innerText = 0;
 }
 
+scrollTo(0,0)
 loadParagraph();
+// console.log(screen.width)
+// // document.addEventListener("resize", function() {
+//     if (screen.width < 570) {
+//         // typingText.style.position = 'absolute'
+//         typingText.style.marginTop = '-50vh'
+//         typingText.style.backgroundColor = 'rgb(0,0,0)'
+//     }
+// // })
+document.querySelector('.time').style.display = 'block'
+document.querySelector('.mistake').style.display = 'block'
+document.querySelector('.wpm').style.display = 'block'
+document.querySelector('.accuracy').style.display = 'block'
+document.querySelector('.reloadBtn').style.display = 'block'
+// document.querySelector('.mistake').style.display = 'none'
+// document.querySelector('.wpm').style.display = 'none'
+// document.querySelector('.accuracy').style.display = 'none'
+// document.querySelector('.reloadBtn').style.display = 'none'
 inpField.addEventListener("input", initTyping);
+// inpField.addEventListener("change", document.querySelector('.active').scrollIntoView())
 tryAgainBtn.addEventListener("click", resetGame)

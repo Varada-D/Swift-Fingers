@@ -8,8 +8,6 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  /* display: flex; */
-  /* padding: 0 10px; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -46,7 +44,7 @@ body{
 }
 .typing-text p{
   font-size: 21px;
-  text-align: justify;
+  text-align: left;
   letter-spacing: 1px;
   word-break: break-all;
   /* display: flex; */

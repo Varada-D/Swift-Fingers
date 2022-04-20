@@ -27,24 +27,24 @@
         }
 
         .title {
-            /* position: absolute;   */
             padding-top: 25vh;
-            transform: translateX(50%, 0);
+            transform: translateX(50%,0);
             font-size: 200%;
-            /* height: 100vh; */
             transition-duration: 2s;
             padding-left: 25vw;
             padding-right: 25vw;
             display: flex;
             height: auto;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0);
             z-index: 999;
             position: absolute;
             top: 0;
             left: 0;
             padding: 1rem;
             animation: fadeIn 2s linear;
+            position: fixed;
+            top: 0;
+            background-color: #111111;
         }
 
         @keyframes fadeIn {
@@ -78,6 +78,7 @@
             padding-top: 100vh;
             transition-duration: 2s;
             width: 100vw;
+            scroll-behavior: smooth;
         }
 
         .content span {
@@ -118,33 +119,35 @@
 
 
         .average {
-            /* border: 1px solid #b5f4df; */
-            /* border-radius: 5vh; */
             color: #004680;
             background-color: #0985eb8d;
             background: radial-gradient(#00e5ff, #0985eb8d);
-            font-size: 120%;
+            font-size: 150%;
             transition-delay: 5s;
-            /* box-shadow: 0px 0px 10px 2px #b5f4df; */
-            /* z-index: 999; */
         }
-
 
         .round3 label,
         .round2 label,
-        .round1 label,
-        .average label {
-            font-size: 100%;
-            font-weight: 900;
-        }
-
-        .average label {
+        .round1 label {
             font-size: 150%;
         }
 
+        .round3 label span,
+        .round2 label span,
+        .round1 label span,
+        .average label span {
+            color: #584200;
+            font-weight: 900;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .average label span {
+            color: #004680;
+        }
+
         .result_icon {
-            /* margin-top: -15px; */
-            font-size: 15vh;
+            font-size: 30vh;
         }
 
         .symbol {
@@ -180,49 +183,88 @@
             }
         }
     </style>
+    <style>
+        .round1 h1,
+        .round2 h1,
+        .round3 h1,
+        .average h1 {
+            margin: 2rem auto;
+        }
+
+        .round1 h1 span,
+        .round2 h1 span,
+        .round3 h1 span {
+            color: #584200;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .average h1 span {
+            color: #004680;
+            visibility: visible;
+            opacity: 1;
+            transform: scale(0);
+            transition-duration: 1s;
+        }
+
+        .average h1 span:first-child {
+            transform: rotate(-60deg);
+        }
+
+        .average h1 span:last-child {
+            transform: rotate(60deg);
+        }
+    </style>
+</head>
 
 <body data-spy="scroll" data-target="#navbar1" data-offset="60"
     style="background-image: linear-gradient(to bottom, #101010, #000000);">
     <div class="title col-12 justify-content-center align-items-center">
         <img src="img/logo.png" alt="Swift Fingers Logo" style="width: 3.5rem" />
         <div class="d-flex" style="align-items: center">
-            <!-- <h1 class="text-primary"><span class="ion ion-md-speedometer"></span></h1> -->
-            <!-- <h1 class="col-12 text-center">Round 1</h1> -->
             <h1 class="px-2 mb-0">Swift Fingers</h1>
         </div>
     </div>
     <main
         style="background-image: linear-gradient(to bottom, #101010, #000000); padding-bottom: 0.9rem; min-height: 100vh;">
         <section class="container mt-0 py-5">
-            <div class="row mt-0">
-                <div class="col-12 my-auto mt-0">
+            <div class="row mt-0 py-5">
+                <div class="col-12 my-auto mt-0 pt-5">
                     <div class="row text-center mt-0">
-                        <!-- <h1 class="col-12 text-center">Your Scores</h1> -->
                         <div class="wrapper">
                             <div class="content-box">
                                 <div class="content mx-auto" style="width: 80%; border-bottom: none;">
 
                                     <div class="round1 d-flex align-items-center flex-column">
                                         <h2 style="font-weight: 900; font-size: 100%;">Round 1</h2>
-                                        <h2 class="mb-3" style="font-weight: 900; font-size: 150%;">Speed Run</h2>
-                                        <label class="mb-0 text-center col-12">67 wpm</label>
-                                        <label class="mb-0 text-center col-12">95% accuracy</label>
+                                        <h2 class="mb-3" style="font-weight: 900; font-size: 200%;">Speed Run</h2>
+                                        <h1 class="display-2"><span style="font-size: 10rem"
+                                                class="ion ion-md-speedometer"></span>
+                                        </h1>
+                                        <label class="mb-0 text-center col-12"><span>67</span> wpm</label>
+                                        <label class="mb-0 text-center col-12"><span>95%</span> accuracy</label>
                                     </div>
                                     <span style="font-size: 200%" class="symbol">+</span>
 
                                     <div class="round2 d-flex align-items-center flex-column">
                                         <h2 style="font-weight: 900; font-size: 100%;">Round 2</h2>
-                                        <h2 class="mb-3" style="font-weight: 900; font-size: 150%;">Timescape</h2>
-                                        <label class="mb-0 text-center col-12">67 wpm</label>
-                                        <label class="mb-0 text-center col-12">95% accuracy</label>
+                                        <h2 class="mb-3" style="font-weight: 900; font-size: 200%;">Timescape</h2>
+                                        <h1 class="display-2"><span style="font-size: 10rem"
+                                                class="ion ion-md-stopwatch"></span>
+                                        </h1>
+                                        <label class="mb-0 text-center col-12"><span>67</span> wpm</label>
+                                        <label class="mb-0 text-center col-12"><span>95%</span> accuracy</label>
                                     </div>
                                     <span style="font-size: 200%" class="symbol">+</span>
 
                                     <div class="round3 d-flex align-items-center flex-column">
                                         <h2 style="font-weight: 900; font-size: 100%;">Round 3</h2>
-                                        <h2 class="mb-3" style="font-weight: 900; font-size: 150%;">Blind Typing</h2>
-                                        <label class="mb-0 text-center col-12">67 wpm</label>
-                                        <label class="mb-0 text-center col-12">95% accuracy</label>
+                                        <h2 class="mb-3" style="font-weight: 900; font-size: 200%;">Blind Typing</h2>
+                                        <h1 class="display-2"><span style="font-size: 10rem"
+                                                class="ion ion-md-eye-off"></span>
+                                        </h1>
+                                        <label class="mb-0 text-center col-12"><span>67</span> wpm</label>
+                                        <label class="mb-0 text-center col-12"><span>95%</span> accuracy</label>
                                     </div>
                                 </div>
                             </div>
@@ -232,9 +274,14 @@
                             <div class="content-box">
                                 <div class="content col-12 justify-content-center" style="border-bottom: none;">
                                     <div class="average d-flex align-items-center flex-column">
-                                        <h2 class="mb-3" style="font-weight: 900; font-size: 120%;">Average</h2>
-                                        <label class="mb-0 text-center col-12">67 wpm</label>
-                                        <label class="mb-0 text-center col-12">95% accuracy</label>
+                                        <h2 style="font-weight: 900; font-size: 120%;">Average</h2>
+                                        <h1 class="display-2 d-flex col-12 mt-0" style="justify-content: space-evenly;">
+                                            <span class="bi bi-star-fill"></span>
+                                            <span class="bi bi-star-fill"></span>
+                                            <span class="bi bi-star-fill"></span>
+                                        </h1>
+                                        <label class="mb-0 text-center col-12"><span>67</span> wpm</label>
+                                        <label class="mb-0 text-center col-12"><span>95%</span> accuracy</label>
                                     </div>
                                 </div>
                             </div>
@@ -277,8 +324,20 @@
                 element.style.visibility = 'visible'
                 element.style.opacity = '1'
             });
+            setTimeout(function () {
+                scrollTo(0, document.body.scrollHeight);
+            }, 5000)
             document.querySelector('.average').style.visibility = 'visible'
+
             document.querySelector('.average').style.opacity = '1'
+            document.querySelectorAll('.average h1 span').forEach(element => {
+                setTimeout(function () {
+                    element.style.transform = 'scale(200%)'
+                }, 5000)
+                setTimeout(function () {
+                    element.style.transform = 'scale(100%)'
+                }, 5000)
+            })
         }, 1500)
     </script>
 </body>

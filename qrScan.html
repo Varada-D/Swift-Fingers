@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan QR | Swift Fingers | Ananta</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/3.0.0/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/darkster.css" rel="stylesheet">
+    <link href="css/customStyles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        #reader {
+            border: none;
+        }
+
+        #reader__camera_selection {
+            display: inline-block;
+            width: 100%;
+            height: calc(2.25rem + 2px);
+            padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+            line-height: 1.5;
+            background-color: #000;
+            vertical-align: middle;
+            background-size: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            appearance: none;
+            margin-bottom: 2.5vh;
+        }
+
+        #reader__camera_selection:focus {
+            border-color: #ffae8b;
+            outline: 0;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(255, 174, 139, 0.5);
+        }
+
+        #reader__camera_selection:focus::-ms-value {
+            color: #495057;
+            background-color: #000000;
+        }
+
+        #reader__camera_selection[multiple],
+        #reader__camera_selection[size]:not([size="1"]) {
+            height: auto;
+            padding-right: 0.75rem;
+            background-image: none;
+        }
+
+        #reader__camera_selection:disabled {
+            color: #6c757d;
+            background-color: #e9ecef;
+        }
+
+        #reader__camera_selection::-ms-expand {
+            opacity: 0;
+        }
+
+        #reader__dashboard_section_swaplink {
+            font-size: 80%;
+        }
+
+        button {
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 80%;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        button {
+            color: #fff;
+            background-color: #FF550B;
+            border-color: #FF550B;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #e44500;
+            border-color: #d74100;
+        }
+
+        button:focus,
+        button.focus {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(255, 85, 11, 0.5);
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar1" data-offset="60">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
+        <div class="container">
+            <a class="navbar-brand logo px-3 mr-1 mb-1 mt-0 text-primary" href="../">SF<span
+                    style="color: #f0f0f0;">_</span></a>
+            <a class="navbar-brand px-3 mr-1 mb-1 mt-0" href="../">Swift Fingers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html">Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="compete.html">Compete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="winners.html">Winners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main
+        style="background: #0a0a0a; background: linear-gradient(to bottom, #0a0a0a, #000000); background: url(img/bg2.avif) no-repeat center; background-size: cover;">
+        <section class="container mt-0 py-5" style="background-color: rgba(0,0,0,0.9);">
+            <div class="row mt-0 py-5">
+                <div class="col-12 my-auto mt-0 py-5">
+                    <div class="row text-center mt-0 py-5">
+
+                        <div class="" id="loginForm" tabindex="-1"
+                            style="margin: auto; width: 35vw; min-width: 300px; background-color: rgba(0,0,0,0);">
+                            <div class="-dialog -dialog-centered -dialog-scrollable">
+                                <div class="-content"
+                                    style="overflow-x: hidden; box-shadow: 1px 1px 10px 1px #b7ccff; background-color: rgb(0,0,0); padding: 5vh 2.5vh; border-radius: 10px;">
+                                    <div class="-header">
+                                        <h1 class="-title section-title pb-0" style="color: #f0f0f0">Scan QR</h1>
+                                    </div>
+                                    <div id="reader"></div>
+                                    <form class="needs-validation" id="scanQr" style="margin: 0 auto;" novalidate>
+                                        <div class="-body mt-3">
+                                            <div class="row mx-auto">
+                                                <div class="col-12 col-md-9 form-group">
+                                                    <input class="form-control" id="ParticipantId"
+                                                        placeholder="Participant Id" required readonly>
+                                                    <label class="col-form-label">Participant Id</label>
+                                                </div>
+                                                <div class="col-12 col-md-3 form-group" style="display: inline-block;">
+                                                    <input type="submit" class="btn btn-primary">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div id="message" class="mt-5 py-2 mx-auto" style="background-color: #f0f0f0; border-radius: 10px; width: 95%; color:#0a0a0a">Message</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="bg-dark text-light pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-5">
+                    <h6 class="col-12 text-center text-uppercase">Contact Details:</h6>
+                    <ul class="nav flex-column align-items-center">
+                        <li class="pt-3">
+                            <strong>Ashish Kumar Patel</strong><br>
+                            <ul>
+                                <li><a class="text-white" target="ext" rel="nofollow" href="https://wa.me/+917567956523"
+                                        title="WhatsApp Ashish Kumar Patel">+91 75679 56523</a></li>
+                                <li>
+                                    <a class="text-white" target="ext" rel="nofollow"
+                                        href="mailto:20bt04004@gsfcuniversity.ac.in"
+                                        title="Mail Ashish Kumar Patel">20bt04004@gsfcuniversity.ac.in</a>
+                            </ul>
+                        </li>
+                        </li>
+                        <li class="pt-3">
+                            <strong>Varada Deshpande</strong><br>
+                            <ul>
+                                <li><a class="text-white" target="ext" rel="nofollow" href="https://wa.me/+919687349441"
+                                        title="WhatsApp Varada Deshpande">+91 96873 49441</a></li>
+                                <li>
+                                    <a class="text-white" target="ext" rel="nofollow"
+                                        href="mailto:20bt04051@gsfcuniversity.ac.in"
+                                        title="Mail Varada Deshpande">20bt04051@gsfcuniversity.ac.in</a>
+                            </ul>
+                        </li>
+                        </li>
+                        <li class="pt-3">
+                            <strong>Parth Thakkar</strong><br>
+                            <ul>
+                                <li><a class="text-white" target="ext" rel="nofollow" href="https://wa.me/+919033222992"
+                                        title="WhatsApp Parth Thakkar">+91 90332 22992</a></li>
+                                <li>
+                                    <a class="text-white" target="ext" rel="nofollow"
+                                        href="mailto:20bt04031@gsfcuniversity.ac.in"
+                                        title="Mail Parth Thakkar">20bt04031@gsfcuniversity.ac.in</a>
+                            </ul>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4 text-center d-flex flex-column align-items-center">
+                    <img class="footer-logo" src="img/tagline.png" alt="Ananta Logo">
+                    <a class="text-white" target="ext" rel="nofollow" href="https://anantagsfcu.in"
+                        title="Ananta'22 Website">https://anantagsfcu.in</a>
+                    <img class="footer-logo mt-5" src="img/g-Logo.png" alt="GSFC Logo">
+                    <a class="text-white" target="ext" rel="nofollow" href="https://gsfcuni.edu.in"
+                        title="GSFC University Website">https://gsfcuni.edu.in/</a>
+                </div>
+                <div class="col-12 col-lg-4 mb-2 text-center align-items-center">
+                    <h6 class="text-uppercase col-lg-11 pt-5">Address</h6>
+                    <p class="text-justify col-lg-11">Data Engineering Lab, 2nd Floor, Anviksha, GSFC University, P. O.
+                        Fertilizernagar, Vadodara - 391750, Gujarat, India</p>
+                </div>
+            </div>
+            <p class="text-center mt-5 pb-3">Designed by Team Ananta'22</p>
+        </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/html5qr-code.min.js"></script>
+    <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+            document.getElementById('ParticipantId').value = qrCodeMessage
+        }
+        function onScanError(errorMessage) {
+            //handle scan error
+        }
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 1, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
+    <script>
+        document.getElementById('reader').style.border = 'none'
+        document.getElementById('reader').children[0].style.display = 'none'
+    </script>
+
+</body>
+
+</html>

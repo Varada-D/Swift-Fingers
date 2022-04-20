@@ -8600,3 +8600,9 @@ a.activeTab:hover {
         margin: 0.8rem;
     }
 }
+
+.participantName {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
